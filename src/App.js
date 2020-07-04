@@ -18,7 +18,6 @@ export default function App() {
   useEffect(() => {
       api.get('repositories').then(response => {
         setRepositories(response.data);
-        console.log(response.data)
       })
   }, []);
 
@@ -35,9 +34,7 @@ export default function App() {
     };    
 
     repositories[repositorieIndex] = repository;
-    console.log('ID A: '+ repositories[repositorieIndex].id);
     setRepositories([ ...repositories, ]);
-    console.log('ID B: '+ repositories[repositorieIndex].id);
   }
 
   return (
